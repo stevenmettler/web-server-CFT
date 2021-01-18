@@ -30,14 +30,6 @@ Resources:
         Ref: VPC
       InternetGatewayId:
         Ref: InternetGateway
-  EIP:
-    Type: "AWS::EC2::EIP"
-    Properties:
-      Domain: vpc
-  NatGateway:
-    Type: AWS::EC2::NatGateway
-    Properties:
-      AllocationId: !GetAtt "EIP.AllocationId"
   PublicRouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
@@ -165,4 +157,3 @@ Outputs:
           - Fn::GetAtt:
               - WebServerInstance
               - PublicDnsName
-

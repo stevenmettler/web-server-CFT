@@ -119,7 +119,7 @@ Resources:
   IamRole:
     Type: AWS::IAM::Role
     Properties:
-      RoleName: iamRoleFlowLogs
+      RoleName: flowLogsRole
       AssumeRolePolicyDocument:
         Version: "2012-10-17"
         Statement:
